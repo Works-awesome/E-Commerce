@@ -7,7 +7,7 @@
 //
 
 #import "OrderHistoryViewController.h"
-
+#import "OrderHistoryTableViewCell.h"
 @interface OrderHistoryViewController ()
 
 @end
@@ -24,14 +24,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 3;
 }
-*/
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *identifier=@"ordercell";
+    
+    OrderHistoryTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    
+    if (cell == nil) {
+        cell = [[OrderHistoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    cell.Productimage.image=[UIImage  imageNamed:@"po1.png"];
+    
+    cell.productName.text=@"Nike NightMare";
+    cell.Price.text=@"7";
+    cell.Size.text=@"21.12.2016";
+    cell.Amount.text=@"145$";
+    return cell;
+}
+
 
 @end

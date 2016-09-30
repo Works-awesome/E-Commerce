@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrderHistoryViewController : UIViewController
+@interface OrderHistoryViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end

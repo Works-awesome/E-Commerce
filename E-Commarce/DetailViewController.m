@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "HHAlertView.h"
 @interface DetailViewController ()
 
 @end
@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.navigationController.navigationBar.topItem setTitle:@"Details"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +25,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)addToCart:(id)sender {
+    
+    
+    HHAlertView *alertview = [[HHAlertView alloc] initWithTitle:@"Success" detailText:@"Add To Cart successfully" cancelButtonTitle:nil otherButtonTitles:@[@"OK"]];
+    [alertview setEnterMode:HHAlertEnterModeLeft];
+    [alertview setLeaveMode:HHAlertLeaveModeRight];
+    
+    [alertview showWithBlock:^(NSInteger index) {
+        NSLog(@"%ld",(long)index);
+    }];
+    [alertview show];
 }
-*/
+
 
 @end

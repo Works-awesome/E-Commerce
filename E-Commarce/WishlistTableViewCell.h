@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WishlistTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *size;
+@property (weak, nonatomic) IBOutlet UILabel *amount;
 
 @end

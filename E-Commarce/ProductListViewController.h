@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductListViewController : UIViewController
+@interface ProductListViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionview;
 
 @end

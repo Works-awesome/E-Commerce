@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.h
+//  HomeTableViewCell.h
 //  E-Commarce
 //
 //  Created by Arjun Hanswal on 9/30/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@interface HomeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
 @end
